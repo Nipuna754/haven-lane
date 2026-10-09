@@ -1,0 +1,134 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition:
+    translate var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) ease;
+}
+
+.card:hover {
+  translate: 0 -6px;
+  border-color: #a9bcd3;
+}
+
+.media {
+  position: relative;
+}
+
+.photo {
+  aspect-ratio: 4 / 3;
+  transition: scale 600ms var(--ease-out);
+}
+
+.card:hover .photo {
+  scale: 1.04;
+}
+
+.badge {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+}
+
+.save {
+  position: absolute;
+  z-index: 2;
+  top: var(--space-3);
+  right: var(--space-3);
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+  color: var(--color-navy);
+  cursor: pointer;
+  transition: scale var(--duration-quick) var(--ease-out);
+}
+
+.save:hover {
+  scale: 1.08;
+}
+
+.save[aria-pressed="true"] svg {
+  fill: var(--color-coral-dark);
+  stroke: var(--color-coral-dark);
+}
+
+.save:focus-visible {
+  border-radius: var(--radius-pill);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 1.25rem 1.375rem 1.375rem;
+}
+
+/* Visually the price comes first; in the page outline the address is the heading */
+.price {
+  order: -1;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: var(--text-price);
+  line-height: 1.25;
+}
+
+.address {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-m);
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.link {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+/* Stretch the link over the whole card */
+.link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.link:focus-visible {
+  box-shadow: none;
+}
+
+.card:has(.link:focus-visible) {
+  box-shadow: var(--focus-ring);
+}
+
+.area {
+  color: var(--color-muted);
+  font-size: var(--text-s);
+  line-height: 1.45;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) 1.125rem;
+  margin-top: var(--space-2);
+  padding-top: var(--space-3);
+  border-top: var(--border);
+  color: var(--color-muted);
+  font-size: var(--text-s);
+}
+
+.facts li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

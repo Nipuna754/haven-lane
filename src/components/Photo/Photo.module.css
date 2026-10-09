@@ -1,0 +1,9 @@
+:where(.photo) {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-placeholder);
+}
+
+.img {
+  object-fit: cover;
+}

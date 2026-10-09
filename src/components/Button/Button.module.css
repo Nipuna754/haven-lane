@@ -1,0 +1,82 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 2.875rem;
+  padding: 0.75rem 1.375rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: var(--leading-ui);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-quick) ease,
+    border-color var(--duration-quick) ease,
+    color var(--duration-quick) ease,
+    translate var(--duration-quick) var(--ease-out),
+    scale var(--duration-quick) var(--ease-out);
+}
+
+.button:hover {
+  translate: 0 -2px;
+}
+
+.button:active {
+  translate: 0;
+  scale: 0.97;
+}
+
+.button:focus-visible {
+  border-radius: var(--radius-pill);
+}
+
+.primary {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+.primary:hover {
+  background: var(--color-navy-hover);
+  color: var(--color-white);
+}
+
+.secondary {
+  background: transparent;
+  border-color: var(--color-navy);
+  color: var(--color-navy);
+}
+
+.secondary:hover {
+  background: var(--color-white);
+  color: var(--color-navy);
+}
+
+.accent {
+  background: var(--color-coral-dark);
+  color: var(--color-white);
+}
+
+.accent:hover {
+  background: var(--color-coral-dark-hover);
+  color: var(--color-white);
+}
+
+/* White button for use on dark photo areas */
+.light {
+  background: var(--color-white);
+  color: var(--color-navy);
+}
+
+.light:hover {
+  background: var(--color-sky);
+  color: var(--color-navy);
+}
+
+.full {
+  width: 100%;
+}

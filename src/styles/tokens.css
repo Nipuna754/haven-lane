@@ -1,0 +1,85 @@
+/*
+  Haven Lane design tokens. Every value here comes from the Figma file
+  (Foundations frame). Change a value once and the whole site follows.
+*/
+:root {
+  /* Colour: Harbour palette (light blue, white, navy, coral accent) */
+  --color-navy: #17365f; /* buttons, headings on light, footer */
+  --color-navy-hover: #10284a;
+  --color-navy-line: #2a4c7a;
+  --color-sky: #f3f7fb; /* page background */
+  --color-sky-deep: #dcebfa; /* hero and light blue bands */
+  --color-white: #ffffff;
+  --color-ink: #142034;
+  --color-muted: #536075;
+  --color-rule: #d3deea;
+  --color-coral: #d9643c; /* icons and large details only (3.6:1 on white) */
+  --color-coral-dark: #b0452a; /* small accent text and accent buttons (5.6:1) */
+  --color-coral-dark-hover: #923820;
+  --color-ice: #e4eef8; /* icon tiles, selected chips */
+  --color-peach: #fceae3; /* check icon circles */
+  --color-placeholder: #d5e3f1; /* photo placeholder */
+  --color-map: #e4ecf4;
+  --color-on-navy: #c9d7ea; /* body text on navy */
+  --color-on-navy-soft: #b3c5dd; /* small print on navy */
+  --color-error: #a3352b;
+
+  /* Type */
+  --font-serif: var(--font-serif-face), Georgia, "Times New Roman", serif;
+  --font-serif-italic: var(--font-serif-italic-face), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-sans-face), ui-sans-serif, system-ui, sans-serif;
+
+  --text-xs: 0.8125rem; /* 13 */
+  --text-s: 0.875rem; /* 14 */
+  --text-m: 1rem; /* 16 */
+  --text-body: 1.0625rem; /* 17 */
+  --text-l: 1.125rem; /* 18 */
+  --text-xl: clamp(1.25rem, 1.1rem + 0.5vw, 1.375rem); /* 20-22 */
+  --text-price: clamp(1.5rem, 1.4rem + 0.4vw, 1.625rem); /* 24-26 */
+  --text-h3: clamp(1.5rem, 1.25rem + 1vw, 2.125rem); /* 24-34 */
+  --text-h2: clamp(1.875rem, 1.45rem + 1.8vw, 2.75rem); /* 30-44 */
+  --text-h1: clamp(2.125rem, 1.6rem + 2.3vw, 3.25rem); /* 34-52 */
+  --text-display: clamp(2.625rem, 1.55rem + 4.6vw, 4.75rem); /* 42-76 */
+
+  --leading-tight: 1.08;
+  --leading-heading: 1.18;
+  --leading-ui: 1.35;
+  --leading-body: 1.65;
+  --tracking-display: -0.025em;
+  --tracking-heading: -0.015em;
+
+  /* Space (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 2rem;
+  --space-8: 2.5rem;
+  --space-9: 3rem;
+  --space-10: 4rem;
+  --space-11: 6rem;
+  --section-y: clamp(3rem, 2rem + 4vw, 6rem); /* 48 on phone, 96 on desktop */
+
+  /* Layout */
+  --page-max: 75rem; /* 1200px content, as in Figma */
+  --page-gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --measure: 44rem;
+
+  /* Shape */
+  --radius-control: 10px;
+  --radius-tile: 12px;
+  --radius-card: 16px;
+  --radius-panel: 20px;
+  --radius-pill: 999px;
+  --border: 1px solid var(--color-rule);
+
+  /* Focus: a white gap then a navy ring, visible on light and photo backgrounds */
+  --focus-ring: 0 0 0 3px var(--color-white), 0 0 0 5px var(--color-navy);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration-quick: 160ms;
+  --duration-base: 280ms;
+}

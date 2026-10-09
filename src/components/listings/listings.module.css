@@ -1,0 +1,340 @@
+.page {
+  padding-bottom: var(--section-y);
+}
+
+.head {
+  display: grid;
+  gap: var(--space-2);
+  padding-block: var(--space-8) var(--space-6);
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  color: var(--color-muted);
+  font-size: var(--text-s);
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-right: var(--space-2);
+  color: var(--color-rule);
+}
+
+.breadcrumb a {
+  color: var(--color-muted);
+}
+
+.count {
+  color: var(--color-muted);
+}
+
+/* ---------- Filter bar (sticks under the menu bar) ---------- */
+.filterBar {
+  position: sticky;
+  top: var(--nav-h, 4.25rem);
+  z-index: 20;
+  background: var(--color-white);
+  border-block: var(--border);
+}
+
+.filterForm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  padding-block: var(--space-3);
+}
+
+.segmented {
+  display: flex;
+  gap: 2px;
+  padding: 4px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-sky);
+}
+
+.segmented label {
+  position: relative;
+}
+
+.segmented input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.segmented span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0 0.875rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: var(--text-s);
+}
+
+.segmented input:checked + span {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+.segmented input:focus-visible + span {
+  box-shadow: var(--focus-ring);
+}
+
+.filtersToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  padding: 0 0.875rem;
+  border: var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+  font-weight: 600;
+  font-size: var(--text-s);
+  cursor: pointer;
+}
+
+.filtersToggle:focus-visible {
+  border-radius: var(--radius-pill);
+}
+
+.selects {
+  display: none;
+  flex-basis: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.selects[data-open="true"] {
+  display: grid;
+}
+
+.select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.select select {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0 2.25rem 0 0.875rem;
+  border: var(--border);
+  border-radius: var(--radius-control);
+  background: var(--color-white);
+  font-weight: 500;
+  font-size: var(--text-s);
+  appearance: none;
+  cursor: pointer;
+}
+
+.select select:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+.select svg {
+  position: absolute;
+  right: 0.75rem;
+  color: var(--color-muted);
+  pointer-events: none;
+}
+
+.sort {
+  margin-left: auto;
+}
+
+.sortLabel {
+  margin-right: var(--space-2);
+  color: var(--color-muted);
+  font-size: var(--text-s);
+}
+
+.update {
+  min-height: 2.75rem;
+  padding: 0 1rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: var(--text-s);
+}
+
+@media (min-width: 64rem) {
+  .filterBar {
+    top: var(--nav-h, 5.25rem);
+  }
+
+  .filtersToggle {
+    display: none;
+  }
+
+  .selects,
+  .selects[data-open="true"] {
+    display: flex;
+    flex-basis: auto;
+    gap: var(--space-2);
+  }
+
+  .selects .select select {
+    width: auto;
+  }
+}
+
+/* ---------- Active filter chips ---------- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  padding-top: var(--space-4);
+}
+
+.chips ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 2.25rem;
+  padding: 0 0.75rem 0 0.875rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-ice);
+  color: var(--color-navy);
+  font-weight: 500;
+  font-size: var(--text-s);
+  text-decoration: none;
+}
+
+.chip:hover {
+  background: #dce7f2;
+}
+
+.chip:focus-visible {
+  border-radius: var(--radius-pill);
+}
+
+.clear {
+  font-weight: 600;
+  font-size: var(--text-s);
+}
+
+/* ---------- Results + map ---------- */
+.results {
+  display: grid;
+  gap: var(--space-6);
+  padding-top: var(--space-6);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.mapPanel {
+  display: none;
+  height: min(70svh, 34rem);
+}
+
+/* On phones and tablets the map replaces the list when "Show map" is chosen */
+.results[data-view="map"] .mapPanel {
+  display: block;
+}
+
+.results[data-view="map"] .list {
+  display: none;
+}
+
+.viewSwitch {
+  position: fixed;
+  z-index: 30;
+  left: 50%;
+  bottom: var(--space-5);
+  translate: -50% 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 3rem;
+  padding: 0 1.25rem 0 1.125rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgb(27 36 32 / 0.18);
+}
+
+.viewSwitch:hover {
+  color: var(--color-white);
+  background: var(--color-navy-hover);
+}
+
+.viewSwitch:focus-visible {
+  border-radius: var(--radius-pill);
+  box-shadow: var(--focus-ring);
+}
+
+.empty {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-3);
+  padding: var(--space-8);
+  border: var(--border);
+  border-radius: var(--radius-card);
+  background: var(--color-white);
+}
+
+.empty h2 {
+  font-size: var(--text-h3);
+}
+
+.empty p {
+  color: var(--color-muted);
+}
+
+.emptyLink {
+  font-weight: 600;
+}
+
+@media (min-width: 40rem) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Desktop: list and map side by side, map stays in view while scrolling */
+@media (min-width: 64rem) {
+  .results {
+    grid-template-columns: minmax(0, 760fr) minmax(0, 408fr);
+    gap: var(--space-7);
+    align-items: start;
+  }
+
+  .results[data-view] .list {
+    display: block;
+  }
+
+  .results[data-view] .mapPanel {
+    display: block;
+    position: sticky;
+    top: calc(var(--nav-h, 5.25rem) + 4.5rem + var(--space-4));
+    height: calc(100svh - var(--nav-h, 5.25rem) - 4.5rem - var(--space-8));
+    min-height: 28rem;
+  }
+
+  .viewSwitch {
+    display: none;
+  }
+}

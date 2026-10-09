@@ -1,0 +1,27 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand {
+  color: var(--color-navy);
+  --logo-roof: var(--color-sky);
+}
+
+.light {
+  color: var(--color-sky);
+  --logo-roof: var(--color-navy);
+}
+
+.mark {
+  flex: none;
+}
+
+.word {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.4375rem;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}

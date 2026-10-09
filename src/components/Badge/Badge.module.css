@@ -1,0 +1,19 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3125rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  line-height: var(--leading-ui);
+  color: var(--color-navy);
+  white-space: nowrap;
+}
+
+.light {
+  background: var(--color-white);
+}
+
+.tint {
+  background: var(--color-ice);
+}

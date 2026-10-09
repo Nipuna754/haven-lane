@@ -1,0 +1,135 @@
+.page {
+  padding-block: var(--space-8) var(--section-y);
+}
+
+.head {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.lead {
+  max-width: 36em;
+  color: var(--color-muted);
+  font-size: var(--text-l);
+  line-height: 1.55;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: var(--space-6);
+}
+
+/* ---------- Agent profile ---------- */
+.profile {
+  display: grid;
+  gap: var(--space-6);
+  padding-block: var(--space-6) var(--section-y);
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  color: var(--color-muted);
+  font-size: var(--text-s);
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-right: var(--space-2);
+  color: var(--color-rule);
+}
+
+.breadcrumb a {
+  color: var(--color-muted);
+}
+
+.intro {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.portrait {
+  aspect-ratio: 4 / 5;
+  max-width: 22.5rem;
+  border-radius: var(--radius-panel);
+}
+
+.introText {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+}
+
+.area {
+  color: var(--color-coral-dark);
+  font-weight: 600;
+}
+
+.bio {
+  max-width: 34em;
+  font-size: var(--text-body);
+  line-height: 1.7;
+}
+
+.contact {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.contact li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 2.75rem;
+  overflow-wrap: anywhere;
+}
+
+.contact svg {
+  flex: none;
+  color: var(--color-coral-dark);
+}
+
+.formCard {
+  padding: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  border: var(--border);
+  border-radius: var(--radius-panel);
+  background: var(--color-white);
+}
+
+@media (min-width: 64rem) {
+  .intro {
+    grid-template-columns: 20rem minmax(0, 1fr) 24rem;
+    align-items: start;
+    gap: var(--space-9);
+  }
+}
+
+.listings {
+  padding-block: var(--section-y);
+  background: var(--color-white);
+}
+
+.listings h2 {
+  margin-bottom: var(--space-8);
+}
+
+.listingGrid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 40rem) {
+  .listingGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .listingGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-7);
+  }
+}

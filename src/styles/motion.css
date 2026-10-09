@@ -1,0 +1,30 @@
+/*
+  Scroll reveal: anything marked data-reveal fades and rises as it scrolls
+  into view. Pure CSS (scroll-driven animations), no JavaScript. Browsers
+  without support, and visitors who prefer reduced motion, see the content
+  in place. Only opacity and transform move, so nothing shifts the layout.
+  --i staggers items that sit side by side.
+*/
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    [data-reveal] {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      /* Measured in pixels from when the top edge enters, so tall and short
+         items finish at the same point and nothing on the first screen is
+         left half faded. */
+      animation-range: entry calc(var(--i, 0) * 40px) entry calc(170px + var(--i, 0) * 50px);
+    }
+  }
+}
