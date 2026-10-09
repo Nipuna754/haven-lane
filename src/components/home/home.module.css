@@ -599,6 +599,11 @@
   border-radius: var(--radius-panel);
 }
 
+/* keep the agent (right of frame) in view when cropped square */
+.whyPhoto img {
+  object-position: 72% 50%;
+}
+
 .whyCopy {
   display: grid;
   justify-items: start;
