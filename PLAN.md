@@ -6,7 +6,7 @@ Upwork clients who hire for real estate sites, property listing sites and "Next.
 ## What it is
 A website for a made-up agency, **Haven Lane Realty**, in Austin, Texas. Agents add and edit homes in Sanity; the site shows them with photos, price, map and filters, and visitors send enquiries.
 
-Fictional on purpose. The footer says so, and photos are AI-generated or free stock.
+Fictional on purpose. The footer says so, and photos are free stock from Pexels.
 
 ## Pages
 1. **Home**: hero (short muted video, search bar: buy/rent, area, price), featured homes, browse by neighbourhood, why Haven Lane (3 points), meet the agents, example reviews (labelled as examples), call to action.
@@ -82,6 +82,7 @@ Note: the Figma file still has the Evergreen colours and the old hero. Update it
 - [x] Step 3.2: Listings page `/homes`: filters (buy / rent / sold, area, type, price, beds) and sort, all in the URL so results can be shared; filters update as you change them and still work without JavaScript; removable filter chips; empty state; map with price pins (Leaflet + OpenStreetMap / CARTO tiles) beside the list on desktop, a Show map / Show list switch on phones
 - [x] Step 3.3: Property page `/homes/[slug]` (photo grid + full-screen viewer with arrow keys, facts, monthly estimate, features, location map, viewing request form with clear error messages, similar homes, phone bar with Call / Book) and agent pages `/agents`, `/agents/[slug]`. Checks: axe 0 violations on every page (desktop + phone, motion off; with motion on, only a card half way into view at the bottom edge is flagged while it fades in); no sideways scroll at 320 / 390 / 768 / 1024; Lighthouse accessibility 100 (listings desktop 96 for the same fading card), SEO 100, performance mobile 95–99 / desktop 100, layout shift 0. Best practices 96 on map pages only because this test workspace blocks the map tiles
 - [x] Redesign (7 Oct): Harbour palette (light blue, white, navy, coral) and new hero layout, so App 5 no longer looks like App 1. Contrast 25/25 pairs pass
-- [ ] Step 3.4: Photos and hero video (waiting for the photos)
+- [x] Step 3.4: Photos (57 Pexels photos, loaded from the Pexels CDN; the seed copies them into Sanity). Hero video skipped.
+- [x] Step 7 (part): GitHub repo + Vercel deploy, live at https://haven-lane.vercel.app
 - [x] Step 4 (code): Sanity schemas (listing, agent, neighbourhood, office details) and Studio at `/studio`; one data layer that reads Sanity, or the sample data until Sanity is connected; seed script that copies the sample content into Sanity; webhook `/api/revalidate` so published edits show straight away; Supabase `enquiries` table with row-level security (visitors can add, never read); viewing / contact forms save to it, with a spam trap and a clear message if saving fails; contact page form; styled 404. Checks: GROQ queries tested against the seed documents (all fields match the sample data); SQL tested on Postgres (13/13 permission and validation checks); forms tested end to end against a stand-in Supabase API; webhook rejects bad signatures and refreshes content; axe 0 violations; Lighthouse accessibility 100 / performance mobile 94–97
 - [ ] Step 4 (accounts): create the Sanity and Supabase projects, add keys to `.env.local`, run the SQL and the seed script

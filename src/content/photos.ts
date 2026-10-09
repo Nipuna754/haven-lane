@@ -9,6 +9,7 @@ type Credit = { id: number; by: string };
 
 export const pexels = {
   hero: { id: 5524164, by: "Clay Elliot" },
+  "why-us": { id: 36729941, by: "Vitaly Gariev" },
 
   "avenue-f-ext": { id: 5353939, by: "Curtis Adams" },
   "avenue-f-living": { id: 36777534, by: "Curtis Adams" },

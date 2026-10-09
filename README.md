@@ -2,7 +2,9 @@
 
 A website for **Haven Lane Realty**, a fictional estate agency in Austin, Texas. Designed in Figma, built in Next.js. Agents manage listings in Sanity Studio (built into the site at `/studio`); viewing requests and messages are saved in Supabase.
 
-> Haven Lane is not a real agency. Addresses, people and reviews are made up; phone numbers use the 555 range reserved for fiction.
+> Haven Lane is not a real agency. Addresses, people and reviews are made up; phone numbers use the 555 range reserved for fiction. Photos are free stock from Pexels (photographers credited in `src/content/photos.ts`).
+
+**Live site:** https://haven-lane.vercel.app
 
 **Figma design:** https://www.figma.com/design/eWBDwnfUTo65ALknHc7PCU
 

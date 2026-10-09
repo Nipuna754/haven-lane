@@ -1,3 +1,4 @@
+import { pexelsSrc } from "@/content/photos";
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import { getAgents, getHomes, getNeighbourhoods } from "@/content/data";
@@ -106,7 +107,7 @@ export function Why() {
   return (
     <section className={styles.section} aria-labelledby="why-title">
       <div className={`container ${styles.why}`}>
-        <Photo photo={{ alt: "A Haven Lane agent showing a couple round a sunny kitchen", tone: "#bfd3e8" }} sizes="(min-width: 64rem) 560px, 100vw" className={styles.whyPhoto} />
+        <Photo photo={{ src: pexelsSrc("why-us"), alt: "A Haven Lane agent showing a couple round a home", tone: "#bfd3e8" }} sizes="(min-width: 64rem) 560px, 100vw" className={styles.whyPhoto} />
         <div className={styles.whyCopy}>
           <h2 id="why-title" className={styles.unmask}>
             An agent who knows the street, not just the postcode.
