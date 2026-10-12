@@ -11,6 +11,11 @@
   font-family: var(--font-sans);
 }
 
+/* OpenStreetMap's tiles are bright; mute them so the navy and coral price pins stand out */
+.map :global(.leaflet-tile-pane) {
+  filter: saturate(0.35) brightness(1.04);
+}
+
 /* Leaflet's own wrapper for each pin: no box, the pill sizes itself */
 .pinWrap {
   width: auto !important;

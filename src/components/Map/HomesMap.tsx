@@ -27,10 +27,11 @@ export function HomesMap({ pins, label, zoom }: { pins: MapPin[]; label: string;
     import("leaflet").then((L) => {
       if (cancelled || !ref.current) return;
       map = L.map(ref.current, { scrollWheelZoom: false, zoomControl: true, attributionControl: true });
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+      // OpenStreetMap's own tiles: free, no key (CARTO's now require one). Fine for a
+      // low-traffic demo under OSM's tile policy; switch to a paid tile service for real traffic.
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
-        subdomains: "abcd",
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(map);
 
       // Position the map first; Leaflet only creates pin elements once it has a view
